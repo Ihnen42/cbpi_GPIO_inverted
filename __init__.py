@@ -22,12 +22,12 @@ class GPIOSimple(ActorBase):
 
     def init(self):
         GPIO.setup(int(self.gpio), GPIO.OUT)
-        GPIO.output(int(self.gpio), 0)
+        GPIO.output(int(self.gpio), 1)
 
     def on(self, power=0):
         print "GPIO ON %s" % str(self.gpio)
-        GPIO.output(int(self.gpio), 1)
+        GPIO.output(int(self.gpio), 0)
 
     def off(self):
         print "GPIO OFF"
-        GPIO.output(int(self.gpio), 0)
+        GPIO.output(int(self.gpio), 1)
